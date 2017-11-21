@@ -1,0 +1,74 @@
+﻿@model Vehicle.ViewModel.Vehicle.VehicleEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Vehicle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="VehicleID" />
+            <div class="col-md-4">
+
+                <div class="form-group">
+                    <label asp-for="PlateOfVehicle" class="control-label"></label>
+                    <input asp-for="PlateOfVehicle" class="form-control" />
+                    <span asp-validation-for="PlateOfVehicle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NicknameOfVehicle" class="control-label"></label>
+                    <input asp-for="NicknameOfVehicle" class="form-control" />
+                    <span asp-validation-for="NicknameOfVehicle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VehicleBrandID" class="control-label"></label>
+                    <select asp-for="VehicleBrandID" asp-items="@(Model.VehicleBrandList)" class="form-control"></select>
+                    <span asp-validation-for="VehicleBrandID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VehicleModelID" class="control-label"></label>
+                    <select asp-for="VehicleModelID" asp-items="@(Model.VehicleModelList)" class="form-control"></select>
+                    <span asp-validation-for="VehicleModelID" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="ModelYearOfVehicle" class="control-label"></label>
+                    <input asp-for="ModelYearOfVehicle" class="form-control" min="1990" max="@(DateTime.Now.Year)" />
+                    <span asp-validation-for="ModelYearOfVehicle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TypeOfVehicleID" class="control-label"></label>
+                    <select asp-for="TypeOfVehicleID" asp-items="@(Model.TypeOfVehicleList)" class="form-control"></select>
+                    <span asp-validation-for="TypeOfVehicleID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ColorOfVehicle" class="control-label"></label>
+                    <input asp-for="ColorOfVehicle" class="form-control" />
+                    <span asp-validation-for="ColorOfVehicle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="State" class="control-label"></label>
+                    <input asp-for="State" type="hidden" />
+                    Is Active :
+                    <input type="checkbox" id="chkState" @((Model.State == 0) ? "" : "checked") />
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

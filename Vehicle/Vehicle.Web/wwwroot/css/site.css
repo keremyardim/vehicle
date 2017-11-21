@@ -1,0 +1,85 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+    .badge-success[href]:focus, .badge-success[href]:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #1e7e34;
+    }
+
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+    .badge-danger[href]:focus, .badge-danger[href]:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #bd2130;
+    }
+
+
+/*Vehicle Page*/
+table {
+}
+
+    table thead tr th {
+        padding: 10px 0px 10px 0px !important
+    }
+
+    table tr th {
+    }
+
+    table tr td {
+    }
+
+    table tfoot tr td {
+        padding: 30px 0px !important;
+    }
+
+.dl-horizontal dt {
+    text-align: left;
+    padding: 5px 0px;
+}
+.dl-horizontal dd {
+    padding: 5px 0px;
+}
+/*Vehicle Page And*/

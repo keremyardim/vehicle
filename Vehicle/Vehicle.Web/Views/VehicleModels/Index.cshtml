@@ -1,0 +1,104 @@
+﻿@model Vehicle.Business.Utils.PaginatedList<Vehicle.ViewModel.VehicleModel.VehicleModelViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<h2>Model List</h2>
+<p>
+    <a asp-action="Create">Create New Model</a>
+</p>
+<hr />
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="text" name="SearchString" value="@ViewData["currentFilter"]" class="form-control" />
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-default" /> |
+                <a asp-action="Index">Back to Full List</a>
+            </div>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["ModelNameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Model Name</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["BrandNameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Brand Name</a>
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Creation Date
+            </th>
+            <th>
+                Modified Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleModelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehicleBrandName)
+                </td>
+                <td>
+                    @if (item.StateName == "Active")
+                    {
+                        <span class="badge badge-success">@Html.DisplayFor(modelItem => item.StateName)</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">@Html.DisplayFor(modelItem => item.StateName)</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.VehicleModelID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.VehicleModelID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.VehicleModelID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="8">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-page="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="btn btn-default @prevDisabled">
+                    Previous
+                </a>
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-page="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="btn btn-default @nextDisabled">
+                    Next
+                </a>
+            </td>
+        </tr>
+    </tfoot>
+</table>

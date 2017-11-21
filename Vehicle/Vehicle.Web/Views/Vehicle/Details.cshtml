@@ -1,0 +1,91 @@
+﻿@model Vehicle.ViewModel.Vehicle.VehicleViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Vehicle Detail</h2>
+
+<div>
+    <hr />
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PlateOfVehicle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PlateOfVehicle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NicknameOfVehicle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NicknameOfVehicle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.VehicleBrandName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.VehicleBrandName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.VehicleModelName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.VehicleModelName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModelYearOfVehicle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModelYearOfVehicle)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeOfVehicleName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TypeOfVehicleName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ColorOfVehicle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ColorOfVehicle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.State)
+            </dt>
+            <dd>
+                @if (Model.StateName == "Active")
+                {
+                    <span class="badge badge-success">@Html.DisplayFor(model => model.StateName)</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger">@Html.DisplayFor(model => model.StateName)</span>
+                }
+                
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreationDateString)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedDateString)
+            </dd>
+        </dl>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

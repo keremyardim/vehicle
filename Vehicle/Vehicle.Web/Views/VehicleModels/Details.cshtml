@@ -1,0 +1,49 @@
+﻿@model Vehicle.ViewModel.VehicleModel.VehicleModelViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Model Details</h2>
+
+<div>
+    <h4>Vehicle Model</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VehicleModelName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VehicleModelName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+        <dd>
+            @if (Model.StateName == "Active")
+            {
+                <span class="badge badge-success">@Html.DisplayFor(model => model.StateName)</span>
+            }
+            else
+            {
+                <span class="badge badge-danger">@Html.DisplayFor(model => model.StateName)</span>
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedDateString)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedDateString)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VehicleModelID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

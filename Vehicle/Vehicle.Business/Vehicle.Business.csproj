@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle.DataAccess\Vehicle.DataAccess.csproj" />
+    <ProjectReference Include="..\Vehicle.DomainModel\Vehicle.DomainModel.csproj" />
+    <ProjectReference Include="..\Vehicle.Infrastracture\Vehicle.Infrastracture.csproj" />
+    <ProjectReference Include="..\Vehicle.ViewModel\Vehicle.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
