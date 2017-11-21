@@ -9,6 +9,10 @@ namespace Vehicle.Business.Utils
 {
     public static class ServiceRegister
     {
+        /// <summary>
+        /// Register required service object to IOC
+        /// </summary>
+        /// <param name="service"></param>
         public static void RegisterDomainService(this IServiceCollection service)
         {
             service.AddTransient<ITypeOfVehicleService, TypeOfVehicleService>();

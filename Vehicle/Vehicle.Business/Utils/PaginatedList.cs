@@ -6,6 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Vehicle.Business.Utils
 {
+    /// <summary>
+    /// Get pagination info from grid result set
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class PaginatedList<T> : List<T>
     {
         public int PageIndex { get; private set; }
