@@ -11,6 +11,9 @@ using Vehicle.Business.Utils;
 
 namespace Vehicle.Web
 {
+    /// <summary>
+    /// Project sturtup settings
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
