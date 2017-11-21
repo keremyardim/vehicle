@@ -9,9 +9,11 @@ using Vehicle.DataAccess;
 using Vehicle.DomainModel;
 using Vehicle.Business.ServiceContract;
 using Vehicle.ViewModel.VehicleBrand;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vehicle.Web.Controllers
 {
+    [Authorize]
     public class VehicleBrandsController : Controller
     {
         private readonly IVehicleBrandService _brandService;

@@ -9,9 +9,11 @@ using Vehicle.DataAccess;
 using Vehicle.DomainModel;
 using Vehicle.Business.ServiceContract;
 using Vehicle.ViewModel.VehicleModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Vehicle.Web.Controllers
 {
+    [Authorize]
     public class VehicleModelsController : Controller
     {
         private readonly IVehicleModelService _modelService;
