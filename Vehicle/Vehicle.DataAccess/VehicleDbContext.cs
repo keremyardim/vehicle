@@ -12,6 +12,10 @@ namespace Vehicle.DataAccess
 {
     public class VehicleDbContext : IdentityDbContext<Model.VehicleUser>
     {
+        /// <summary>
+        /// Entity Framework code first declaration
+        /// </summary>
+        /// <param name="options"></param>
         public VehicleDbContext(DbContextOptions<VehicleDbContext> options) : base(options)
         {
         }
@@ -26,10 +30,6 @@ namespace Vehicle.DataAccess
             builder.Entity<Model.TypeOfVehicle>().HasKey(m => m.TypeOfVehicleID);
             builder.Entity<Model.VehicleModel>().HasKey(m => m.VehicleModelID);
             builder.Entity<Model.VehicleBrand>().HasKey(m => m.VehicleBrandID);
-
-            // shadow properties
-            //builder.Entity<Model.Vehicle>().Property<DateTime>("CreationDate");
-            //builder.Entity<Model.Vehicle>().Property<DateTime>("ModifiedDate");
             
             base.OnModelCreating(builder);
 
@@ -61,6 +61,7 @@ namespace Vehicle.DataAccess
                 ChangeTracker.Entries<T>()
                     .Where(e => e.State == EntityState.Added);
 
+            //Search new object and set default paramenter
             foreach (var entry in addedSourceInfo)
             {
                 if (entry.Property("CreationDate") != null)
@@ -78,6 +79,7 @@ namespace Vehicle.DataAccess
                 ChangeTracker.Entries<T>()
                     .Where(e => e.State == EntityState.Modified);
 
+            //Search modified object and set default paramenter
             foreach (var entry in modifiedSourceInfo)
             {
                 if (entry.Property("ModifiedDate") != null)
