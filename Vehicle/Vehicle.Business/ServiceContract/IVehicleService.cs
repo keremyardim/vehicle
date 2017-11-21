@@ -9,6 +9,7 @@ namespace Vehicle.Business.ServiceContract
 {
     public interface IVehicleService : IBaseContract<ViewModel.Vehicle.VehicleViewModel, Vehicle.ViewModel.Vehicle.VehicleEditViewModel, Int32>
     {
+        //Add spesific contract from IVehicleService
         Task<VehicleViewModel> GetVehicleForPaletNumber(string PaletNumber, int? VehicleID = null);
     }
 }
