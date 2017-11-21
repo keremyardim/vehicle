@@ -19,7 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.ViewModel", "Vehicl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{BC2C5587-635D-4D64-A21C-AE21B677805F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle.Infrastracture", "Vehicle.Infrastracture\Vehicle.Infrastracture.csproj", "{57CDCB74-3561-4FA7-96B5-83BDA5979609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vehicle.Infrastracture", "Vehicle.Infrastracture\Vehicle.Infrastracture.csproj", "{57CDCB74-3561-4FA7-96B5-83BDA5979609}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectFiles", "ProjectFiles", "{2EC71CA5-714F-45A5-80B9-B8856CDEBB4C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\DBSechema.PNG = ..\..\..\..\Desktop\DBSechema.PNG
+		..\..\..\..\..\..\New Folder\Vehicle_DB.bak = ..\..\..\..\..\..\New Folder\Vehicle_DB.bak
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
